@@ -44,5 +44,17 @@ function formatName() {
 const element3 = <h1>Ok {formatName()}</h1>;
 
 ReactDOM.render(element3, document.getElementById('root3'));
+
+/*
+jsx inside if statement
+*/
+function nameFun() {
+	if (user) {
+		return <h1>Ok {formatName()}</h1>;
+	}
+	return <h1>ok stranger</h1>;
+}
+
+ReactDOM.render(nameFun(), document.getElementById('root4'));
 serviceWorker.unregister();
 
