@@ -29,5 +29,20 @@ const element2 = <h1> total {2+2}</h1>;
 
 ReactDOM.render(element2, document.getElementById('root2'));
 
+/*
+using javascript function in jsx
+*/
+const user = {
+  'firstName' : 'Neha',
+  'lastName' : 'Hingu'
+};
+
+function formatName() {
+	return user.firstName + ' ' + user.lastName;
+}
+
+const element3 = <h1>Ok {formatName()}</h1>;
+
+ReactDOM.render(element3, document.getElementById('root3'));
 serviceWorker.unregister();
 
