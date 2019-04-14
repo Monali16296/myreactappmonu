@@ -56,5 +56,16 @@ function nameFun() {
 }
 
 ReactDOM.render(nameFun(), document.getElementById('root4'));
+
+/*
+can also create element like this
+*/
+const element4 = React.createElement(
+  'h1',
+  {className: 'greeting'},
+  'Hello World'
+);
+
+ReactDOM.render(element4, document.getElementById('root5'));
 serviceWorker.unregister();
 
