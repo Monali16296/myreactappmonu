@@ -67,5 +67,20 @@ const element4 = React.createElement(
 );
 
 ReactDOM.render(element4, document.getElementById('root5'));
+
+/*
+updating the rendered element
+*/
+function tick() {
+  const element5 = (
+    <div>
+      <h1>hello</h1>
+      <h1>It is {new Date().toLocaleTimeString()}</h1>
+    </div>
+  );
+  ReactDOM.render(element5, document.getElementById('root6'));
+}
+
+setInterval(tick, 1000);
 serviceWorker.unregister();
 
