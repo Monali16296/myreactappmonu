@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+import Test1 from './demo1/Test1';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -82,5 +83,10 @@ function tick() {
 }
 
 setInterval(tick, 1000);
+
+/*
+external component
+ */
+ReactDOM.render(<Test1 />, document.getElementById('root7'));
 serviceWorker.unregister();
 
