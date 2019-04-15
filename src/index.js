@@ -88,5 +88,16 @@ setInterval(tick, 1000);
 external component
  */
 ReactDOM.render(<Test1 />, document.getElementById('root7'));
+
+/*
+user defined component
+ */
+function Welcome(props) {
+    return <h1>Byy {props.name}</h1>
+}
+
+const element6 = <Welcome name="sara" />;
+
+ReactDOM.render(element6, document.getElementById('root8'));
 serviceWorker.unregister();
 
