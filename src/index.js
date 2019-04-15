@@ -99,5 +99,20 @@ function Welcome(props) {
 const element6 = <Welcome name="sara" />;
 
 ReactDOM.render(element6, document.getElementById('root8'));
+
+/*
+composing components
+ */
+function App1() {
+    return (
+      <div>
+        <Welcome name="a1" />
+        <Welcome name="a2" />
+        <Welcome name="a3" />
+      </div>
+    );
+}
+
+ReactDOM.render(<App1 />, document.getElementById('root9'));
 serviceWorker.unregister();
 
