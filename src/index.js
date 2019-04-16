@@ -170,5 +170,25 @@ ReactDOM.render(
     />,
     document.getElementById('root10')
 );
-serviceWorker.unregister();
 
+/*
+make clock compoent truly reusable
+ */
+function Clock(props) {
+  return(
+    <div>
+      <h1>Hello</h1>
+      <h2>It is {props.date.toLocaleTimeString()}</h2>
+    </div>
+  );
+}
+
+function tickNew() {
+  ReactDOM.render(
+    <Clock date={new Date()} />,
+    document.getElementById('root11')
+  );
+}
+setInterval(tickNew, 1000);
+
+serviceWorker.unregister();
