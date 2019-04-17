@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Test1 from './demo1/Test1';
+import Test2 from './demo1/Test2';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -190,5 +191,7 @@ function tickNew() {
   );
 }
 setInterval(tickNew, 1000);
+
+ReactDOM.render(<Test2 name="aaa"/>, document.getElementById('root12'));
 
 serviceWorker.unregister();
