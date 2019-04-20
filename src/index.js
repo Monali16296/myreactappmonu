@@ -233,11 +233,18 @@ handling events 1st topic
  */
 function Fun1() {
   return(
-    <button onClick={activateLasers}>activate laser</button>
+    <div>
+      <button onClick={activateLasers}>activate laser</button>
+      <a href="#" onClick={activateLink}>click link</a>
+    </div>
   );
 }
 function activateLasers() {
-    console.log('11');
+  console.log('11');
+}
+function activateLink(e) {
+  e.preventDefault();
+  console.log('link is clicked');
 }
 ReactDOM.render(<Fun1 />, document.getElementById('root17'));
 serviceWorker.unregister();
