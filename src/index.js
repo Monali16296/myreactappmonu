@@ -5,6 +5,7 @@ import Test1 from './demo1/Test1';
 import Test2 from './demo1/Test2';
 import Test3 from './demo1/Test3';
 import Test4 from './demo1/Test4';
+import Test5 from './demo1/Test5';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -205,4 +206,9 @@ ReactDOM.render(<Test3 />, document.getElementById('root13'))
 lifecycle method to a class
  */
 ReactDOM.render(<Test4 />, document.getElementById('root14'));
+
+/*
+data flows down
+ */
+ReactDOM.render(<Test5 />, document.getElementById('root15'));
 serviceWorker.unregister();
