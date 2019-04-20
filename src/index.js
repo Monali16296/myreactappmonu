@@ -227,4 +227,17 @@ function App2() {
 }
 
 ReactDOM.render(<App2 />, document.getElementById('root16'));
+
+/*
+handling events 1st topic
+ */
+function Fun1() {
+  return(
+    <button onClick={activateLasers}>activate laser</button>
+  );
+}
+function activateLasers() {
+    console.log('11');
+}
+ReactDOM.render(<Fun1 />, document.getElementById('root17'));
 serviceWorker.unregister();
