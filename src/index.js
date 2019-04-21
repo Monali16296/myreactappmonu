@@ -7,6 +7,7 @@ import Test3 from './demo1/Test3';
 import Test4 from './demo1/Test4';
 import Test5 from './demo1/Test5';
 import Test6 from './demo1/Test6';
+import Abc1 from './demo2/Abc1';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -247,4 +248,9 @@ function activateLink(e) {
   console.log('link is clicked');
 }
 ReactDOM.render(<Fun1 />, document.getElementById('root17'));
+
+/*
+toggle
+ */
+ReactDOM.render(<Abc1 />, document.getElementById('root18'));
 serviceWorker.unregister();
