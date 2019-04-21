@@ -8,6 +8,7 @@ import Test4 from './demo1/Test4';
 import Test5 from './demo1/Test5';
 import Test6 from './demo1/Test6';
 import Abc1 from './demo2/Abc1';
+import Abc2 from './demo2/Abc2';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -253,4 +254,9 @@ ReactDOM.render(<Fun1 />, document.getElementById('root17'));
 toggle
  */
 ReactDOM.render(<Abc1 />, document.getElementById('root18'));
+
+/*
+if don't want to bind handleClick()
+ */
+ReactDOM.render(<Abc2 />, document.getElementById('root19'));
 serviceWorker.unregister();
