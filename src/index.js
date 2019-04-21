@@ -9,6 +9,7 @@ import Test5 from './demo1/Test5';
 import Test6 from './demo1/Test6';
 import Abc1 from './demo2/Abc1';
 import Abc2 from './demo2/Abc2';
+import Abc3 from './demo2/Abc3';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -259,4 +260,9 @@ ReactDOM.render(<Abc1 />, document.getElementById('root18'));
 if don't want to bind handleClick()
  */
 ReactDOM.render(<Abc2 />, document.getElementById('root19'));
+
+/*
+another method without bind but not effective
+ */
+ReactDOM.render(<Abc3 />, document.getElementById('root20'));
 serviceWorker.unregister();
