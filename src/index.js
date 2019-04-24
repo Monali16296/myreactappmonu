@@ -265,4 +265,26 @@ ReactDOM.render(<Abc2 />, document.getElementById('root19'));
 another method without bind but not effective
  */
 ReactDOM.render(<Abc3 />, document.getElementById('root20'));
+
+/*
+load components according to condition
+ */
+function UserGreeting() {
+  return <h1>===conditional rendering Welcome back</h1>;
+}
+
+function GuestGreeting() {
+  return <h1>===conditional rendering Please sign up</h1>
+}
+
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn){
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+ReactDOM.render(<Greeting isLoggedIn={false} />, document.getElementById('root21'));
+
 serviceWorker.unregister();
