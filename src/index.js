@@ -10,6 +10,7 @@ import Test6 from './demo1/Test6';
 import Abc1 from './demo2/Abc1';
 import Abc2 from './demo2/Abc2';
 import Abc3 from './demo2/Abc3';
+import LoginControl from './demo3/LoginControl';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -286,5 +287,10 @@ function Greeting(props) {
 }
 
 ReactDOM.render(<Greeting isLoggedIn={false} />, document.getElementById('root21'));
+
+/*
+element variable example
+ */
+ReactDOM.render(<LoginControl />, document.getElementById('root22'));
 
 serviceWorker.unregister();
