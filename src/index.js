@@ -293,4 +293,23 @@ element variable example
  */
 ReactDOM.render(<LoginControl />, document.getElementById('root22'));
 
+/*
+inline if with logical && operator
+ */
+function Mailbox(props) {
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h1>========&& expression welcome</h1>
+        {unreadMessages.length > 0 &&
+          <h1>{unreadMessages.length} unread messages</h1>
+        }
+    </div>
+  );
+}
+
+const messages = ['React', 'Re:React', 'Re:Re:React'];
+
+ReactDOM.render(<Mailbox unreadMessages={messages} />, document.getElementById('root23'));
+
 serviceWorker.unregister();
