@@ -312,4 +312,16 @@ const messages = ['React', 'Re:React', 'Re:Re:React'];
 
 ReactDOM.render(<Mailbox unreadMessages={messages} />, document.getElementById('root23'));
 
+/*
+inline if else with conditional operator
+ */
+function Xyz1(props) {
+  const isLoggedIn = props.isLoggedIn;
+  return (
+    <h1>=======inline if else->the user is {isLoggedIn ? 'loggedin' : 'not logged in'}</h1>
+  );
+}
+
+ReactDOM.render(<Xyz1 isLoggedIn={false} />, document.getElementById('root24'));
+
 serviceWorker.unregister();
