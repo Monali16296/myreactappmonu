@@ -11,6 +11,7 @@ import Abc1 from './demo2/Abc1';
 import Abc2 from './demo2/Abc2';
 import Abc3 from './demo2/Abc3';
 import LoginControl from './demo3/LoginControl';
+import LoginControlCondition from './demo3/LoginControlCondition';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -323,5 +324,10 @@ function Xyz1(props) {
 }
 
 ReactDOM.render(<Xyz1 isLoggedIn={false} />, document.getElementById('root24'));
+
+/*
+conditional operator 2nd example
+ */
+ReactDOM.render(<LoginControlCondition />, document.getElementById('root25'));
 
 serviceWorker.unregister();
