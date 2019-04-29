@@ -342,4 +342,20 @@ using map function
 const numbers = [1, 2, 3, 4, 5];
 const doubled = numbers.map((number) => number * 2);
 console.log(doubled);
+
+/*
+rendering multiple components
+ */
+const numbers2 = [1, 2, 9, 0, 11];
+const xyz2 = numbers2.map((number3) =>
+  <li>{number3}</li>
+);
+
+ReactDOM.render(
+  <div>
+    <h1>=======list</h1>
+    <ul>{xyz2}</ul>
+  </div>,
+  document.getElementById('root27')
+);
 serviceWorker.unregister();
