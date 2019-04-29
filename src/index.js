@@ -336,4 +336,10 @@ preventing component from rendering
  */
 ReactDOM.render(<Page />, document.getElementById('root26'));
 
+/*
+using map function
+ */
+const numbers = [1, 2, 3, 4, 5];
+const doubled = numbers.map((number) => number * 2);
+console.log(doubled);
 serviceWorker.unregister();
