@@ -13,6 +13,7 @@ import Abc3 from './demo2/Abc3';
 import LoginControl from './demo3/LoginControl';
 import LoginControlCondition from './demo3/LoginControlCondition';
 import Page from './demo3/Page';
+import NumberList from './demo3/NumberList';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -358,4 +359,10 @@ ReactDOM.render(
   </div>,
   document.getElementById('root27')
 );
+
+/*
+with component map
+ */
+const numbers4 = [1, 2, 3, 4, 5];
+ReactDOM.render(<NumberList numbers4={numbers4} />, document.getElementById('root28'));
 serviceWorker.unregister();
