@@ -7,7 +7,7 @@ class NumberList extends Component {
   }
   render() {
     const listItems = this.numbers4.map( (numbers5) =>
-        <li>{numbers5}</li>
+        <li key={numbers5.toString()}>{numbers5}</li>
 
     );
     return (
