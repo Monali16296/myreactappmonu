@@ -16,6 +16,7 @@ import Page from './demo3/Page';
 import NumberList from './demo3/NumberList';
 import NumberKeyList from './demo3/NumberKeyList';
 import Blog from './demo3/Blog';
+import BlogNew from './demo3/BlogNew';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -384,4 +385,8 @@ const posts =[
 
 ReactDOM.render(<Blog posts={posts} />, document.getElementById('root30'))
 
+/*
+key using prop
+ */
+ReactDOM.render(<BlogNew posts={posts} />, document.getElementById('root31'));
 serviceWorker.unregister();
