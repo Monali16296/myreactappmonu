@@ -15,6 +15,7 @@ import LoginControlCondition from './demo3/LoginControlCondition';
 import Page from './demo3/Page';
 import NumberList from './demo3/NumberList';
 import NumberKeyList from './demo3/NumberKeyList';
+import Blog from './demo3/Blog';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -372,4 +373,15 @@ correct key usage
  */
 const numbers5 = [1, 2, 3, 4, 5];
 ReactDOM.render(<NumberKeyList numbers={numbers5} />, document.getElementById('root29'));
+
+/*
+keys must only be unique among siblings
+ */
+const posts =[
+  {id: 1, title: 'title 1', content: 'content 1'},
+  {id: 2, title: 'title 2', content: 'content 2'}
+];
+
+ReactDOM.render(<Blog posts={posts} />, document.getElementById('root30'))
+
 serviceWorker.unregister();
