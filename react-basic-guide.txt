@@ -1,0 +1,22 @@
+===> first install node n npm
+
+   install node from official site
+
+  it will add npm default
+
+  then check version by typing command node -v and npm -v
+
+===> create react folder using cmd
+
+ https://github.com/facebook/create-react-app
+
+command:
+  npm init react-app my-app
+
+
+==> for router related package
+
+npm i react-router-dom (i means install)
+
+https://reacttraining.com/react-router/web/example/auth-workflow
+
