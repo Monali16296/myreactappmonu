@@ -17,8 +17,15 @@ import NumberList from './demo3/NumberList';
 import NumberKeyList from './demo3/NumberKeyList';
 import Blog from './demo3/Blog';
 import BlogNew from './demo3/BlogNew';
+import Def1 from './demo4/Def1';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from "react-router-dom";
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
@@ -389,4 +396,28 @@ ReactDOM.render(<Blog posts={posts} />, document.getElementById('root30'))
 key using prop
  */
 ReactDOM.render(<BlogNew posts={posts} />, document.getElementById('root31'));
+
+/*
+use of Route
+*/
+function Demo32() {  
+  return (
+    <Router>
+      <div>
+        <ul>
+          <li>
+            <Link to='/demo'>Click here</Link>
+           </li>
+           <li>
+            <a href='/demo2'>Click here 2</a>
+           </li>
+        </ul>
+      </div>
+      <Route path='/demo' component={Def1} />
+      <Route path='/demo2' component={App} />
+    </Router>
+  );  
+}
+ReactDOM.render(<Demo32 />, document.getElementById('root32'));
+
 serviceWorker.unregister();
