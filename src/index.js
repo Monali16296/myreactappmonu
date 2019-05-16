@@ -18,6 +18,7 @@ import NumberKeyList from './demo3/NumberKeyList';
 import Blog from './demo3/Blog';
 import BlogNew from './demo3/BlogNew';
 import Def1 from './demo4/Def1';
+import Def2 from './demo4/Def2';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -420,4 +421,8 @@ function Demo32() {
 }
 ReactDOM.render(<Demo32 />, document.getElementById('root32'));
 
+/*
+basic form demo
+*/
+ReactDOM.render(<Def2 />, document.getElementById('root33'));
 serviceWorker.unregister();
