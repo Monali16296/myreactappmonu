@@ -27,8 +27,8 @@ class Def2 extends Component {
     }
     handleSubmit(event) {    
       alert('A name was submitted: ' + this.state.name1);
-      alert('A name was submitted: ' + this.state.msg);
-      alert('A name was submitted: ' + this.state.city);
+      alert('A msg was submitted: ' + this.state.msg);
+      alert('A city was submitted: ' + this.state.city);
       event.preventDefault();
     }
   
@@ -46,7 +46,7 @@ class Def2 extends Component {
           </label>
           <select name="city" onChange={this.handleCity}>
             <option value="abd">Ahmedabad</option>
-            <option value="baroda" selected>Baroda</option>
+            <option value="baroda">Baroda</option>
           </select>
           <input type="submit" value="Submit" />
         </form>
