@@ -46,7 +46,7 @@ class Def2 extends Component {
           </label>
           <select name="city" value={this.state.formControls.city} onChange={this.handleChange}>
             <option value="aa">abc</option>
-            <option value="bb" selected>def</option>
+            <option value="bb">def</option>
           </select>
           <input type="submit" value="Submit" />
         </form>
