@@ -437,4 +437,13 @@ ReactDOM.render(<Def3 />, document.getElementById('root34'));
 advanced form implementation
 */
 ReactDOM.render(<Def4 />, document.getElementById('root35'));
+
+/*
+input editable
+*/
+ReactDOM.render(<label>===input editable<input value='hi' /></label>, document.getElementById('root36'));
+setTimeout(function() {
+  ReactDOM.render(<label>===input editable<input value={null} /></label>, document.getElementById('root36'));
+}, 1000);
+
 serviceWorker.unregister();
