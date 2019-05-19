@@ -22,6 +22,7 @@ import Def2 from './demo4/Def2';
 import Def3 from './demo4/Def3';
 import Def4 from './demo4/Def4';
 import Calculator from './demo4/Calculator';
+import Calculator1 from './demo4/Calculator1';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -448,5 +449,10 @@ setTimeout(function() {
 }, 1000);
 
 ReactDOM.render(<Calculator />, document.getElementById('root37'));
+
+/*
+two inputs in temp
+*/
+ReactDOM.render(<Calculator1 />, document.getElementById('root38'));
 
 serviceWorker.unregister();
