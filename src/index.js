@@ -21,6 +21,7 @@ import Def1 from './demo4/Def1';
 import Def2 from './demo4/Def2';
 import Def3 from './demo4/Def3';
 import Def4 from './demo4/Def4';
+import Calculator from './demo4/Calculator';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 
@@ -445,5 +446,7 @@ ReactDOM.render(<label>===input editable<input value='hi' /></label>, document.g
 setTimeout(function() {
   ReactDOM.render(<label>===input editable<input value={null} /></label>, document.getElementById('root36'));
 }, 1000);
+
+ReactDOM.render(<Calculator />, document.getElementById('root37'));
 
 serviceWorker.unregister();
