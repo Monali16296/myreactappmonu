@@ -35,3 +35,14 @@ https://medium.com/@tkssharma/understanding-redux-react-in-easiest-way-part-1-81
 
 ==>componentWillReceiveProps
 https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1
+
+
+==> server dependencies
+
+= npm i --save express
+
+= npm i --save body-parser
+
+= npm i --save mysql
+
+= npm i --save nodemon

@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
 const app = express();
+app.use(require("body-parser").json()); //needed for getting body otherwise data won't be passed
 //app.use(bodyParser.urlencoded({ extended: false }));
 //app.use(express.static(__dirname));
 
@@ -15,8 +16,7 @@ var connection = mysql.createConnection({
 connection.connect();
   
 app.post('/user/new', function(req, res) {
-  var ee = "sonu";
-  var sql = "INSERT INTO aaa VALUES ('"+ee+"')";
+  var sql = "INSERT INTO aaa VALUES ('"+req.body.name2+"')";
 
   connection.query(sql, function(error, results) {
     results = {
