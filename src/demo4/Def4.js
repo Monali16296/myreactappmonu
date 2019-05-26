@@ -29,7 +29,10 @@ class Def4 extends Component {
       alert('A numberofguest was submitted: ' + this.state.numberOfGuests);
       
       var data = {
-          name2: this.state.name1
+          name2: this.state.name1,
+          msg: this.state.msg,
+          city: this.state.city,
+          numberOfGuests: this.state.numberOfGuests
       };
 
       fetch('/user/new', {

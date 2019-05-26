@@ -16,7 +16,7 @@ var connection = mysql.createConnection({
 connection.connect();
   
 app.post('/user/new', function(req, res) {
-  var sql = "INSERT INTO aaa VALUES ('"+req.body.name2+"')";
+  var sql = "INSERT INTO aaa (name, msg, city, number_guest) VALUES ('"+req.body.name2+"', '"+req.body.msg+"', '"+req.body.city+"', '"+req.body.numberOfGuests+"')";
 
   connection.query(sql, function(error, results) {
     results = {
