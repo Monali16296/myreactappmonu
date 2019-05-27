@@ -24,6 +24,7 @@ import Def4 from './demo4/Def4';
 import Calculator from './demo4/Calculator';
 import Calculator1 from './demo4/Calculator1';
 import './index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from './serviceWorker';
 
 import {

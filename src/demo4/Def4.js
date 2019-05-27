@@ -1,4 +1,6 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
+import { Container, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
+import './../App.css';
 
 class Def4 extends Component {
     constructor(props) {
@@ -57,30 +59,90 @@ class Def4 extends Component {
   
     render() {
       return (
-        <form onSubmit={this.handleSubmit} method="POST">
-          <h1>===================new form handled by common function</h1>
-          <label>
-            Name:
-            <input type="text" name="name1" value={this.state.name1} onChange={this.handleAll} />
-          </label>
-          <label>
-            Message:
-            <textarea name="msg" value={this.state.msg} onChange={this.handleAll} />
-          </label>
-          <select name="city" value={this.state.city} onChange={this.handleAll}>
-            <option value="abd">Ahmedabad</option>
-            <option value="baroda">Baroda</option>
-          </select>
-          <label>
-            Is Going:
-            <input type="checkbox" name="isGoing" checked={this.state.isGoing} onChange={this.handleAll} />
-          </label>
-          <label>
-            Number of Guests:
-            <input type="number" name="numberOfGuests" value={this.state.numberOfGuests} onChange={this.handleAll} />
-          </label>
-          <input type="submit" value="Submit" />
-        </form>
+        // old form
+        // <form onSubmit={this.handleSubmit} method="POST">
+        //   <h1>===================new form handled by common function</h1>
+        //   <label>
+        //     Name:
+        //     <input type="text" name="name1" value={this.state.name1} onChange={this.handleAll} />
+        //   </label>
+        //   <label>
+        //     Message:
+        //     <textarea name="msg" value={this.state.msg} onChange={this.handleAll} />
+        //   </label>
+        //   <select name="city" value={this.state.city} onChange={this.handleAll}>
+        //     <option value="abd">Ahmedabad</option>
+        //     <option value="baroda">Baroda</option>
+        //   </select>
+        //   <label>
+        //     Is Going:
+        //     <input type="checkbox" name="isGoing" checked={this.state.isGoing} onChange={this.handleAll} />
+        //   </label>
+        //   <label>
+        //     Number of Guests:
+        //     <input type="number" name="numberOfGuests" value={this.state.numberOfGuests} onChange={this.handleAll} />
+        //   </label>
+        //   <input type="submit" value="Submit" />
+        // </form>
+
+        <Container className="App">
+          <h2>Sign Up using reactstrap</h2>
+          <Form className="form" onSubmit={this.handleSubmit} method="POST">
+            <Col>
+              <FormGroup>
+                <Label>Name</Label>
+                <Input
+                  type="text"
+                  name="name1"
+                  value={this.state.name1}
+                  onChange={this.handleAll}
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label>Message</Label>
+                <textarea                
+                  className="form-control"
+                  name="msg"
+                  value={this.state.msg}
+                  onChange={this.handleAll}
+                />
+              </FormGroup>
+            </Col>
+            <Col>
+              <FormGroup>
+                <Label>City</Label>
+                <select className="form-control" name="city" value={this.state.city} onChange={this.handleAll}>
+                  <option value="abd">Ahmedabad</option>
+                  <option value="baroda">Baroda</option>
+              </select>
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>                     
+              <Input              
+                type="checkbox"
+                name="isGoing"
+                value={this.state.isGoing}
+                onChange={this.handleAll}
+              />Is Going:
+            </FormGroup>
+          </Col>
+          <Col>
+            <FormGroup>                      
+              <Label>Number of Guests:</Label>        
+              <Input              
+                type="number"
+                name="numberOfGuests"
+                value={this.state.numberOfGuests}
+                onChange={this.handleAll}
+              />
+            </FormGroup>
+          </Col>
+          <Button>Submit</Button>
+        </Form>
+      </Container>
       );
     }
   }
