@@ -21,6 +21,7 @@ import Def1 from './demo4/Def1';
 import Def2 from './demo4/Def2';
 import Def3 from './demo4/Def3';
 import Def4 from './demo4/Def4';
+import Def5 from './demo4/Def5';
 import Calculator from './demo4/Calculator';
 import Calculator1 from './demo4/Calculator1';
 import './index.css';
@@ -456,4 +457,8 @@ two inputs in temp
 */
 ReactDOM.render(<Calculator1 />, document.getElementById('root38'));
 
+/*
+For session
+*/
+ReactDOM.render(<Def5 />, document.getElementById('root39'));
 serviceWorker.unregister();
