@@ -7,10 +7,13 @@ class Def4 extends Component {
       super(props);
       this.state = {        
         'name1': '',
-        'msg': 'pls enter msg',
+        'msg': '',
         'city': 'abd',
         'isGoing': true,
-        'numberOfGuests': 2        
+        'numberOfGuests': 2,
+        'nameErr': '',
+        'msgErr': '',
+        'numberErr': ''
       };      
       this.handleAll = this.handleAll.bind(this);         
       this.handleSubmit = this.handleSubmit.bind(this);
@@ -19,8 +22,25 @@ class Def4 extends Component {
     handleAll(event) {
       const name = event.target.name;      
       const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value;
-      this.setState({[name]: value});
+      this.setState({[name]: value, 'nameErr': '', 'msgErr': '', 'numberErr': ''});
     }  
+
+    validateUser() {
+      var formValid = true;
+      if (this.state.name1 === '') {
+        formValid = false;
+        this.setState({'nameErr': 'Please enter name'});
+      }
+      if (this.state.msg === '') {
+        formValid = false;
+        this.setState({'msgErr': 'Please enter msg'});
+      }
+      if (this.state.numberOfGuests === '') {
+        formValid = false;
+        this.setState({'numberErr': 'Please enter number'});
+      }
+      return formValid;
+    }
   
     handleSubmit(event) {    
       event.preventDefault();
@@ -36,7 +56,7 @@ class Def4 extends Component {
           city: this.state.city,
           numberOfGuests: this.state.numberOfGuests
       };
-
+      if (this.validateUser()) {
       fetch('/user/new', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -55,6 +75,7 @@ class Def4 extends Component {
       }).catch(function(err) {
         console.log(err);
       });
+    }
      }
   
     render() {
@@ -97,6 +118,7 @@ class Def4 extends Component {
                   value={this.state.name1}
                   onChange={this.handleAll}
                 />
+                <p>{this.state.nameErr}</p>
               </FormGroup>
             </Col>
             <Col>
@@ -105,9 +127,11 @@ class Def4 extends Component {
                 <textarea                
                   className="form-control"
                   name="msg"
+                  placeholder="pls enter msg"
                   value={this.state.msg}
                   onChange={this.handleAll}
                 />
+                <p>{this.state.msgErr}</p>
               </FormGroup>
             </Col>
             <Col>
@@ -138,6 +162,7 @@ class Def4 extends Component {
                 value={this.state.numberOfGuests}
                 onChange={this.handleAll}
               />
+              <p>{this.state.numberErr}</p>
             </FormGroup>
           </Col>
           <Button>Submit</Button>
