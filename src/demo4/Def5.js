@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Container, Col, Form, FormGroup, Label, Input, Button } from 'reactstrap';
 import './../App.css';
+import { connect } from 'react-redux';
+import { handleSubmit } from '../actions/action';
 
-class Def4 extends Component {
+class Def5 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,38 +22,12 @@ class Def4 extends Component {
     this.setState({ password: e.target.value });
   }
 
-  handleSubmit = (e) => {
+  handleSubmit = async (e) => {
     e.preventDefault();
+    if (this.state.name !== '' && this.state.password !== '') {
+      this.props.handleSubmit(this.state.name, this.state.password);
+    }
 
-    fetch('/user/login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name: this.state.name,
-        password: this.state.password
-      })
-    }).then(function (response) {
-      if (response.status >= 400) {
-        throw new Error("Bad response from server");
-      }
-      console.log(response);
-      return response.json();  //if not included this line then data won't print
-    }).then(function (data) {
-
-      if (data.code == 200) {
-        console.log(data.user[0]);
-        localStorage.setItem('username', data.user[0].name); //for session management
-        console.log(localStorage.getItem('username')); //fetching data from session
-        localStorage.removeItem('username'); //for removing item from session
-        console.log(localStorage);
-        console.log('got success');
-      } else {
-        console.log('11');
-        //          this.setState({loginErr: 'Invalid user name or password'});
-      }
-    }).catch(function (err) {
-      console.log(err);
-    });
 
   }
 
@@ -59,7 +35,7 @@ class Def4 extends Component {
     return (
       <Container className="App">
         <h2>Sign In using reactstrap</h2>
-        <Form className="form" onSubmit={(e) => { this.handleSubmit(e) }} method="POST">
+        <Form className="form" onSubmit={(e) => { this.handleSubmit(e) }}>
           {this.state.loginErr ?
             <p> {this.state.loginErr}</p>
             : ''
@@ -93,4 +69,17 @@ class Def4 extends Component {
   }
 }
 
-export default Def4;
+function mapStateToProps(state) {
+  return {
+    user: state.handleSubmit
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleSubmit: (name, password) => {
+      dispatch(handleSubmit(name, password));
+    }
+  }
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Def5);

@@ -22,6 +22,8 @@ import Def2 from './demo4/Def2';
 import Def3 from './demo4/Def3';
 import Def4 from './demo4/Def4';
 import Def5 from './demo4/Def5';
+import { Provider } from 'react-redux';
+import configureStore from './store/configure-store';
 import Calculator from './demo4/Calculator';
 import Calculator1 from './demo4/Calculator1';
 import './index.css';
@@ -55,7 +57,7 @@ ReactDOM.render(element, document.getElementById('root1'));
 /*
 can also put any valid javascript expression in curly braces
 */
-const element2 = <h1> total {2+2}</h1>;
+const element2 = <h1> total {2 + 2}</h1>;
 
 ReactDOM.render(element2, document.getElementById('root2'));
 
@@ -63,12 +65,12 @@ ReactDOM.render(element2, document.getElementById('root2'));
 using javascript function in jsx
 */
 const user = {
-  'firstName' : 'Neha',
-  'lastName' : 'Hingu'
+  'firstName': 'Neha',
+  'lastName': 'Hingu'
 };
 
 function formatName() {
-	return user.firstName + ' ' + user.lastName;
+  return user.firstName + ' ' + user.lastName;
 }
 
 const element3 = <h1>Ok {formatName()}</h1>;
@@ -79,10 +81,10 @@ ReactDOM.render(element3, document.getElementById('root3'));
 jsx inside if statement
 */
 function nameFun() {
-	if (user) {
-		return <h1>Ok {formatName()}</h1>;
-	}
-	return <h1>ok stranger</h1>;
+  if (user) {
+    return <h1>Ok {formatName()}</h1>;
+  }
+  return <h1>ok stranger</h1>;
 }
 
 ReactDOM.render(nameFun(), document.getElementById('root4'));
@@ -92,7 +94,7 @@ can also create element like this
 */
 const element4 = React.createElement(
   'h1',
-  {className: 'greeting'},
+  { className: 'greeting' },
   'Hello World'
 );
 
@@ -122,7 +124,7 @@ ReactDOM.render(<Test1 />, document.getElementById('root7'));
 user defined component
  */
 function Welcome(props) {
-    return <h1>Byy {props.name}</h1>
+  return <h1>Byy {props.name}</h1>
 }
 
 const element6 = <Welcome name="sara" />;
@@ -133,13 +135,13 @@ ReactDOM.render(element6, document.getElementById('root8'));
 composing components
  */
 function App1() {
-    return (
-      <div>
-        <Welcome name="a1" />
-        <Welcome name="a2" />
-        <Welcome name="a3" />
-      </div>
-    );
+  return (
+    <div>
+      <Welcome name="a1" />
+      <Welcome name="a2" />
+      <Welcome name="a3" />
+    </div>
+  );
 }
 
 ReactDOM.render(<App1 />, document.getElementById('root9'));
@@ -176,7 +178,7 @@ function Comment(props) {
       <UserInfo user={props.author} />
       <div className="comment-text">{props.text}</div>
       <div className="comment-date">
-          {formatDate(props.date)}
+        {formatDate(props.date)}
       </div>
     </div>
   );
@@ -186,25 +188,25 @@ const comment = {
   date: new Date(),
   text: 'I hope you enjoy learning react',
   author: {
-      name: 'Hello kitty',
-      avatarUrl: 'https://placekitten.com/g/64/64',
+    name: 'Hello kitty',
+    avatarUrl: 'https://placekitten.com/g/64/64',
   },
 }
 
 ReactDOM.render(
-    <Comment
-      date={comment.date}
-      text={comment.text}
-      author={comment.author}
-    />,
-    document.getElementById('root10')
+  <Comment
+    date={comment.date}
+    text={comment.text}
+    author={comment.author}
+  />,
+  document.getElementById('root10')
 );
 
 /*
 make clock compoent truly reusable
  */
 function Clock(props) {
-  return(
+  return (
     <div>
       <h1>Hello</h1>
       <h2>It is {props.date.toLocaleTimeString()}</h2>
@@ -220,7 +222,7 @@ function tickNew() {
 }
 setInterval(tickNew, 1000);
 
-ReactDOM.render(<Test2 name="aaa"/>, document.getElementById('root12'));
+ReactDOM.render(<Test2 name="aaa" />, document.getElementById('root12'));
 
 /*
 local state to a class
@@ -241,7 +243,7 @@ ReactDOM.render(<Test5 />, document.getElementById('root15'));
 data flows down same components
  */
 function App2() {
-  return(
+  return (
     <div>
       <Test6 />
       <Test6 />
@@ -256,7 +258,7 @@ ReactDOM.render(<App2 />, document.getElementById('root16'));
 handling events 1st topic
  */
 function Fun1() {
-  return(
+  return (
     <div>
       <button onClick={activateLasers}>activate laser</button>
       <a href="#" onClick={activateLink}>click link</a>
@@ -300,7 +302,7 @@ function GuestGreeting() {
 
 function Greeting(props) {
   const isLoggedIn = props.isLoggedIn;
-  if (isLoggedIn){
+  if (isLoggedIn) {
     return <UserGreeting />;
   }
   return <GuestGreeting />;
@@ -321,9 +323,9 @@ function Mailbox(props) {
   return (
     <div>
       <h1>========&& expression welcome</h1>
-        {unreadMessages.length > 0 &&
-          <h1>{unreadMessages.length} unread messages</h1>
-        }
+      {unreadMessages.length > 0 &&
+        <h1>{unreadMessages.length} unread messages</h1>
+      }
     </div>
   );
 }
@@ -392,9 +394,9 @@ ReactDOM.render(<NumberKeyList numbers={numbers5} />, document.getElementById('r
 /*
 keys must only be unique among siblings
  */
-const posts =[
-  {id: 1, title: 'title 1', content: 'content 1'},
-  {id: 2, title: 'title 2', content: 'content 2'}
+const posts = [
+  { id: 1, title: 'title 1', content: 'content 1' },
+  { id: 2, title: 'title 2', content: 'content 2' }
 ];
 
 ReactDOM.render(<Blog posts={posts} />, document.getElementById('root30'))
@@ -407,23 +409,23 @@ ReactDOM.render(<BlogNew posts={posts} />, document.getElementById('root31'));
 /*
 use of Route
 */
-function Demo32() {  
+function Demo32() {
   return (
     <Router>
       <div>
         <ul>
           <li>
             <Link to='/demo'>Click here</Link>
-           </li>
-           <li>
+          </li>
+          <li>
             <a href='/demo2'>Click here 2</a>
-           </li>
+          </li>
         </ul>
       </div>
       <Route path='/demo' component={Def1} />
       <Route path='/demo2' component={App} />
     </Router>
-  );  
+  );
 }
 ReactDOM.render(<Demo32 />, document.getElementById('root32'));
 
@@ -446,7 +448,7 @@ ReactDOM.render(<Def4 />, document.getElementById('root35'));
 input editable
 */
 ReactDOM.render(<label>===input editable<input value='hi' /></label>, document.getElementById('root36'));
-setTimeout(function() {
+setTimeout(function () {
   ReactDOM.render(<label>===input editable<input value={null} /></label>, document.getElementById('root36'));
 }, 1000);
 
@@ -460,5 +462,18 @@ ReactDOM.render(<Calculator1 />, document.getElementById('root38'));
 /*
 For session
 */
-ReactDOM.render(<Def5 />, document.getElementById('root39'));
+
+let initialState = {};
+try {
+  initialState = JSON.parse(localStorage.getItem('state')) || {};
+  console.log(initialState);
+  console.log("here");
+} catch (e) {
+  console.log('localstorage get error', e);
+}
+const store = configureStore(initialState);
+ReactDOM.render(<Provider store={store}>
+  <Def5 />
+</Provider>,
+  document.getElementById('root39'));
 serviceWorker.unregister();
